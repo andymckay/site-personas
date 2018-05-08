@@ -1,6 +1,6 @@
 {
   "description": "A way to navigate around different site instances with different users.",
-  "homepage_url": "https://github.com/andymckay/site-quick-lookup",
+  "homepage_url": "https://github.com/andymckay/site-personas",
   "manifest_version": 2,
   "name": "Site personas",
   "permissions": [
@@ -25,7 +25,6 @@
     "default_icon": {
       "128": "icon.svg"
     },
-    "default_title": "Site personas",
     "default_popup": "popup.html"
   },
   "version": "0.0.1",

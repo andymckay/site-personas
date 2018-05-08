@@ -1,16 +1,24 @@
+**Status:** this is barely working and a proof of concept. Let me know how it goes.
+
 This Firefox browser extension is an attempt to make life easier when testing web sites and you need to:
+
 * jump between different users on the same site
 * jump between different servers on a site at the same URL
 
 As an example I was testing functionality that required me to test:
+
 * a logged in user with a certain flag set on a site
 * a logged in user without a certain flag set on a site
 * a logged out user
+
 ... and repeat the whole thing on another domain.
 
 This can be accomplished by starting lots of different browsers or a browser with a different profile each time. Unfortunately it's easy to lose track of what is where and there is no coherent connection between them all.
 
-**Status:** this is barely working and a proof of concept. Let me know how it goes.
+How to install
+--------------
+
+You should be able to install it from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/site-personas/)
 
 How to use
 ----------
