@@ -1,0 +1,15 @@
+body {
+  padding: 1em;
+}
+
+body .label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+p.muted {
+  margin-top: 1em;
+  font-size: 80%;
+  color: grey;
+  text-align: right;
+}

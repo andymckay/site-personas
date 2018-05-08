@@ -1,0 +1,13 @@
+button {
+  padding-bottom: 1em;
+}
+
+.indent {
+  border: 1px solid lightgrey;
+  margin: 1em;
+  padding: 1em;
+}
+
+.btn-success {
+  margin-bottom: 1em;
+}
