@@ -15,13 +15,12 @@
       <h2>Tab listing</h2>
       <p>This is a listing of the current tabs matching the personas.</p>
       <button id="reload" class="btn btn-success">Reload</button>
+      <button id="close-all" class="btn btn-danger">Close All</button>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Persona name</th>
             <th>URL</th>
-            <th></th>
-            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -36,7 +35,8 @@
           <tr>
             <th>Persona name</th>
             <th>URL bar icon</th>
-            <th>URL and tab color</th>
+            <th>Color</th>
+            <th>Icon</th>
             <th>Actions</th>
             <th></th>
           </tr>
@@ -104,8 +104,8 @@
       <tr>
         <td><span class="site-name"></span></td>
         <td><a class="site-domain"></a></td>
-        <td><span class="site-icon"></span></td>
         <td><span class="site-color"></span></td>
+        <td><span class="site-icon"></span></td>
         <td><a class="site-open" href="#">Open a tab</a></td>
         <td><a class="site-delete" href="#">Delete</a></td>
       </tr>

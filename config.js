@@ -62,7 +62,19 @@ function reloadEvent() {
   });
 }
 
+async function closeAll(event) {
+  let config = await browser.storage.local.get();
+  for (let site of config.sites) {
+    let tabs = await browser.tabs.query({cookieStoreId: site.cookieStoreId});
+    for (let tab of tabs) {
+      browser.tabs.remove(tab.id)
+    }
+  }
+  rebuildTabList(config.site);
+}
+
 document.getElementById("reload").addEventListener("click", reloadEvent);
+document.getElementById("close-all").addEventListener("click", closeAll);
 document.getElementById("site-form").addEventListener("submit", processForm);
 
 async function rebuildTabList(sites) {
@@ -121,9 +133,7 @@ async function rebuildSiteList(sites) {
     lastSite.dataset.id = site.id;
   }
 
-    console.log(siteListing.querySelectorAll("a.site-open"))
     siteListing.querySelectorAll("a.site-open").forEach(link => {
-      console.log('added siteOpenEvent');
       link.addEventListener("click", siteOpenEvent);
     });
 

@@ -3,7 +3,7 @@ body {
 }
 
 body .label {
-  display: block;
+  display: inline-block;
   margin-bottom: 1em;
 }
 

@@ -1,10 +1,11 @@
-let root = document.getElementById("root");
+let siteListing = document.getElementById("site-listing");
+let siteTemplate = document.getElementById("site-template");
 
 function newTab(event) {
   let target = event.target;
-  console.log(target.id);
   browser.tabs.create({url: target.href, cookieStoreId: target.dataset.id});
 }
+
 
 async function setupPage() {
   browser.tabs.query({currentWindow: true, active: true})
@@ -14,20 +15,23 @@ async function setupPage() {
     .then((config) => {
       config.sites.forEach(function(site) {
         if (site.cookieStoreId != tab[0].cookieStoreId) {
-          let a = document.createElement("a");
-          a.href = `${site.domain}${tabURL.pathname}`;
-          a.className = "label label-default";
-          a.innerText = `Open using ${site.name}`;
-          a.dataset.id = site.cookieStoreId;
-          console.log(site.cookieStoreId);
-          a.addEventListener('click', newTab);
-          root.appendChild(a);
+          let span = siteTemplate.content.querySelector("span");
+          span.innerText = site.name;
+
+          let aNew = siteTemplate.content.querySelector(".new-tab");
+          aNew.dataset.id = site.cookieStoreId;
+          aNew.href = `${site.domain}${tabURL.pathname}`;
+
+          let clone = document.importNode(siteTemplate.content, true)
+          siteListing.appendChild(clone);
         }
       })
-      let p = document.createElement("p");
-      p.className = "muted";
-      p.innerText = `Currently on ${tabURL.hostname}`;
-      root.appendChild(p);
+
+      siteListing.querySelectorAll(".new-tab").forEach(link => {
+        link.addEventListener("click", newTab)
+      });
+
+      document.querySelector(".tab-name").innerText = tabURL.hostname;
     });
   });
 }

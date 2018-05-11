@@ -10,8 +10,16 @@
   </head>
   <body>
     <div class="container">
-      <div id="root"></div>
+      <p>Open this URL in a different persona:</p>
+      <div id="site-listing"></div>
+      <p class="muted">Currently on <span class="tab-name"></span>.</p>
     </div>
+    <template id="site-template">
+      <div>
+        <span></span>
+        <a class="new-tab">New tab</a>
+      </div>
+    </template>
     <script src="popup.js"></script>
   </body>
 </html>
